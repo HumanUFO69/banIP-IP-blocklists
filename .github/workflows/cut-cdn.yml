@@ -30,28 +30,28 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziBadware-ipv4.txt -o ./hageziBadware-ipv4Fixed.txt
+        run: cut-cdn -a -i ./hageziBadware-ipv4.txt -o ./hageziBadware-ipv4Whitelist.txt
 
       - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziBadware-ipv6.txt -o ./hageziBadware-ipv6Fixed.txt
+        run: cut-cdn -a -i ./hageziBadware-ipv6.txt -o ./hageziBadware-ipv6Whitelist.txt
 
       - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziDOH-ipv4.txt -o ./hageziDOH-ipv4Fixed.txt
+        run: cut-cdn -a -i ./hageziDOH-ipv4.txt -o ./hageziDOH-ipv4Whitelist.txt
 
       - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziDOH-ipv6.txt -o ./hageziDOH-ipv6Fixed.txt
+        run: cut-cdn -a -i ./hageziDOH-ipv6.txt -o ./hageziDOH-ipv6Whitelist.txt
 
       - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziThreats-ipv4.txt -o ./hageziThreats-ipv4Fixed.txt
+        run: cut-cdn -a -i ./hageziThreats-ipv4.txt -o ./hageziThreats-ipv4Whitelist.txt
 
       - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziThreats-ipv6.txt -o ./hageziThreats-ipv6Fixed.txt
+        run: cut-cdn -a -i ./hageziThreats-ipv6.txt -o ./hageziThreats-ipv6Whitelist.txt
 
       - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziUltimate-ipv4.txt -o ./hageziUltimate-ipv4Fixed.txt
+        run: cut-cdn -a -i ./hageziUltimate-ipv4.txt -o ./hageziUltimate-ipv4Whitelist.txt
 
       - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziUltimate-ipv6.txt -o ./hageziUltimate-ipv6Fixed.txt
+        run: cut-cdn -a -i ./hageziUltimate-ipv6.txt -o ./hageziUltimate-ipv6Whitelist.txt
 
       # Commit changed files to your repo
       - name: Git Auto Commit
@@ -60,4 +60,4 @@ jobs:
           # Commit message
           commit_message: cut-cdn updates
           # File pattern used for `git add`. For example `src/*.js`
-          file_pattern: ./*-ipv*Fixed.txt
+          file_pattern: ./*-ipv*Whitelist.txt
