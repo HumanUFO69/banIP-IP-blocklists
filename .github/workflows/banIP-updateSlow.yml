@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: banIP-update
+name: banIP-updateFast
 
 # Controls when the workflow will run (on push, on schedule or manually)
 on:
@@ -19,49 +19,18 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - uses: actions/setup-go@v4
 
       # install ipcalc-ng
       - name: Install ipcalc-ng
         run: sudo apt-get install -y ipcalc-ng
 
-      # Runs a single command using the runners shell
-      - name: Run banIP lookup
-        run: sh ./banIP-lookup.sh
-
-      # Commit changed files to your repo
-      - name: Git Auto Commit
-        uses: stefanzweifel/git-auto-commit-action@v4.16.0
-        with:
-          # Commit message
-          commit_message: automatic/regular ip address updates
-          # File pattern used for `git add`. For example `src/*.js`
-          file_pattern: ./*-ipv*.txt
-  fix:
-    needs: build
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      - uses: actions/setup-go@v4
-
-      # install cut-cdn
       - name: Install cut-cdn
         run: go install github.com/ImAyrix/cut-cdn@latest
-
+        
       # Runs a single command using the runners shell
-      - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziBadware-ipv4.txt -o ./hageziBadware-ipv4Whitelist.txt
-
-      - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziBadware-ipv6.txt -o ./hageziBadware-ipv6Whitelist.txt
-
-      - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziDOH-ipv4.txt -o ./hageziDOH-ipv4Whitelist.txt
-
-      - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziDOH-ipv6.txt -o ./hageziDOH-ipv6Whitelist.txt
+      - name: Run banIP lookup
+        run: sh ./banIP-lookupSlow.sh
 
       - name: Run cut-cdn
         run: cut-cdn -a -i ./hageziThreats-ipv4.txt -o ./hageziThreats-ipv4Whitelist.txt
@@ -80,6 +49,6 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
           # Commit message
-          commit_message: cut-cdn updates
+          commit_message: automatic/regular ip address updates
           # File pattern used for `git add`. For example `src/*.js`
-          file_pattern: ./*-ipv*Whitelist.txt
+          file_pattern: ./*-ipv*.txt ./*-ipv*Whitelist.txt
