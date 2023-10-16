@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: banIP-updateSlow
+name: banIP-updateUltimate
 
 # Controls when the workflow will run (on push, on schedule or manually)
 on:
@@ -30,13 +30,7 @@ jobs:
         
       # Runs a single command using the runners shell
       - name: Run banIP lookup
-        run: sh ./banIP-lookupSlow.sh
-
-      - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziThreats-ipv4.txt -o ./hageziThreats-ipv4Whitelist.txt
-
-      - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziThreats-ipv6.txt -o ./hageziThreats-ipv6Whitelist.txt
+        run: sh ./banIP-lookupUltimate.sh
 
       - name: Run cut-cdn
         run: cut-cdn -a -i ./hageziUltimate-ipv4.txt -o ./hageziUltimate-ipv4Whitelist.txt
