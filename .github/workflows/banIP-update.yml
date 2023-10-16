@@ -37,6 +37,7 @@ jobs:
           # File pattern used for `git add`. For example `src/*.js`
           file_pattern: ./*-ipv*.txt
   fix:
+    needs: build
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -52,6 +53,9 @@ jobs:
       # install cut-cdn
       - name: Install cut-cdn
         run: go install github.com/ImAyrix/cut-cdn@latest
+
+      - name: Restart
+        run: reboot
 
       # Runs a single command using the runners shell
       - name: Run cut-cdn
