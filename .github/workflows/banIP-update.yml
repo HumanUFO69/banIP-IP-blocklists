@@ -45,17 +45,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      # install go
-      - name: Install go
-        run: sudo apt-get install -y golang-go
+      - uses: actions/setup-go@v4
+      - uses: ImAyrix/cut-cdn@latest
 
       # install cut-cdn
       - name: Install cut-cdn
         run: go install github.com/ImAyrix/cut-cdn@latest
-
-      - name: Restart
-        run: reboot
 
       # Runs a single command using the runners shell
       - name: Run cut-cdn
