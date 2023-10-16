@@ -5,7 +5,7 @@ name: banIP-update
 # Controls when the workflow will run (on push, on schedule or manually)
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 6,18 * * *'
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
