@@ -6,5 +6,6 @@ This repo contains the IPv4/IPv6 addresses of commonly whitelisted domains and h
 
 The `banIP-lookup.sh` script runs automatically once a day via github actions to extract and update the IP addresses of the external feeds.
 
-Have fun!
+Many Thanks to Dirk Brenken https://github.com/dibdot/ for their work on banIP blocklist automation
+
 HumanUFO69
