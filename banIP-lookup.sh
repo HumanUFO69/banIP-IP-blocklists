@@ -45,9 +45,9 @@ done
 # download domains/host files
 #
 feeds='hageziWhitelist__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/whitelist.txt__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}
-	hageziUltimate__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/ultimate.txt__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}
- 	hageziThreats__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/tif.txt__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}
-  	hageziDOH__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/doh.txt__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}
+	hageziUltimate__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/ultimate.txt__/^0\\.0\\.0\\.0[[:space:]]+([[:alnum:]_-]{1,63}\\.)+[[:alpha:]]+([[:space:]]|$)/{print tolower($2)}
+ 	hageziThreats__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/tif.txt__/^0\\.0\\.0\\.0[[:space:]]+([[:alnum:]_-]{1,63}\\.)+[[:alpha:]]+([[:space:]]|$)/{print tolower($2)}
+  	hageziDOH__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/doh.txt__/^0\\.0\\.0\\.0[[:space:]]+([[:alnum:]_-]{1,63}\\.)+[[:alpha:]]+([[:space:]]|$)/{print tolower($2)}
    	hageziBadware__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/hoster.txt__BEGIN{FS="[\\|^|\\r]"}/^\|\|([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+[\/\^\\r]+$/{printf"%s\n",tolower($3)}
     	oisdWhitelist__https://local.oisd.nl/extract/commonly_whitelisted.php__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}
      	anudeepWhitelist__https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}'
