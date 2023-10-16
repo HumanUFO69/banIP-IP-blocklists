@@ -63,18 +63,6 @@ jobs:
       - name: Run cut-cdn
         run: cut-cdn -a -i ./hageziDOH-ipv6.txt -o ./hageziDOH-ipv6Whitelist.txt
 
-      - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziThreats-ipv4.txt -o ./hageziThreats-ipv4Whitelist.txt
-
-      - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziThreats-ipv6.txt -o ./hageziThreats-ipv6Whitelist.txt
-
-      - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziUltimate-ipv4.txt -o ./hageziUltimate-ipv4Whitelist.txt
-
-      - name: Run cut-cdn
-        run: cut-cdn -a -i ./hageziUltimate-ipv6.txt -o ./hageziUltimate-ipv6Whitelist.txt
-
       # Commit changed files to your repo
       - name: Git Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
