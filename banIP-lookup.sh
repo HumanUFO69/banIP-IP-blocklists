@@ -44,7 +44,13 @@ done
 
 # download domains/host files
 #
-feeds='whitelist__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/whitelist.txt__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}'
+feeds='hageziWhitelist__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/whitelist.txt__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}
+	hageziUltimate__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/ultimate.txt__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}
+ 	hageziThreats__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/tif.txt__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}
+  	hageziDOH__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/doh.txt__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}
+   	hageziBadware__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/hoster.txt__BEGIN{FS="[\\|^|\\r]"}/^\|\|([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+[\/\^\\r]+$/{printf"%s\n",tolower($3)}
+    	oisdWhitelist__https://local.oisd.nl/extract/commonly_whitelisted.php__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}
+     	anudeepWhitelist__https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}'
 	#yoyo__https://pgl.yoyo.org/adservers/serverlist.php?hostformat=nohtml&showintro=0&mimetype=plaintext__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}
 	#adaway__https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt__/^127\.0\.0\.1[[:space:]]+([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($2)}
 	#adguard__https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt__BEGIN{FS="[\\|^|\\r]"}/^\|\|([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+[\/\^\\r]+$/{printf"%s\n",tolower($3)}
