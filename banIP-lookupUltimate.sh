@@ -44,8 +44,7 @@ done
 
 # download domains/host files
 #
-feeds='hageziUltimate__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/ultimate.txt__/^0\.0\.0\.0[[:space:]]+([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($2)}
- 	hageziThreats__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/tif.txt__/^0\.0\.0\.0[[:space:]]+([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($2)}'
+feeds='hageziUltimate__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/ultimate.txt__/^0\.0\.0\.0[[:space:]]+([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($2)}'
 
 for feed in ${feeds}; do
 	: >"./${input1}"
