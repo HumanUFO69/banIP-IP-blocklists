@@ -1,6 +1,6 @@
 # banIP-IP-blocklists
 
-This repo contains the IPv4/IPv6 addresses of commonly whitelisted domains. Currently the following external domain feeds are supported:
+This repo contains the IPv4/IPv6 addresses of commonly whitelisted domains and hagezi lists for personal use. Currently the following external domain feeds are supported:
 
 * hagezi, see https://github.com/hagezi/dns-blocklists for details
 
