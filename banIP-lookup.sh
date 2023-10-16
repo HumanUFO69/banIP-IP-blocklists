@@ -44,7 +44,7 @@ done
 
 # download domains/host files
 #
-feeds= 'whitelist__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/whitelist.txt__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}'
+feeds='whitelist__https://raw.githubusercontent.com/hagezi/dns-blocklists/main/whitelist.txt__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}'
 	#yoyo__https://pgl.yoyo.org/adservers/serverlist.php?hostformat=nohtml&showintro=0&mimetype=plaintext__/^([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($1)}
 	#adaway__https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt__/^127\.0\.0\.1[[:space:]]+([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+([[:space:]]|$)/{printf"%s\n",tolower($2)}
 	#adguard__https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt__BEGIN{FS="[\\|^|\\r]"}/^\|\|([[:alnum:]_-]{1,63}\.)+[[:alpha:]]+[\/\^\\r]+$/{printf"%s\n",tolower($3)}
